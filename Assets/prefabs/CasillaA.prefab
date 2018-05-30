@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33206000533517118}
   - component: {fileID: 23773366948688728}
   - component: {fileID: 65319464369039500}
-  - component: {fileID: 114477881383962990}
+  - component: {fileID: 114563484866246152}
   m_Layer: 0
   m_Name: CasillaA
   m_TagString: Untagged
@@ -41,13 +41,14 @@ GameObject:
   - component: {fileID: 33277916446597038}
   - component: {fileID: 23389767612445044}
   - component: {fileID: 65919306744485872}
+  - component: {fileID: 114595410653848002}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4726235676148548
 Transform:
   m_ObjectHideFlags: 1
@@ -69,7 +70,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1929504316162786}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.481, z: 0}
+  m_LocalPosition: {x: 0, y: 0.537, z: 0}
   m_LocalScale: {x: 0.9, y: 0.1, z: 0.9}
   m_Children: []
   m_Father: {fileID: 4726235676148548}
@@ -81,7 +82,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1929504316162786}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -183,7 +184,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114477881383962990
+--- !u!114 &114563484866246152
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -191,7 +192,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1348620115029208}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30331b6a35b9194479bdf1fa6e2f4335, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114595410653848002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1929504316162786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c6c3b604d3c74a1458ab1d03975fe217, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resaltar: {fileID: 1929504316162786}
+  player: 0
+  col: 0
+  row: 0
+  render: {fileID: 0}
+  defaultMaterial: {fileID: 0}
+  highlightMaterial: {fileID: 0}
+  piece: {fileID: 0}

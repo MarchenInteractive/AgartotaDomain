@@ -21,8 +21,6 @@ GameObject:
   - component: {fileID: 4726235676148548}
   - component: {fileID: 33206000533517118}
   - component: {fileID: 23773366948688728}
-  - component: {fileID: 65319464369039500}
-  - component: {fileID: 114477881383962990}
   m_Layer: 0
   m_Name: CasillaB
   m_TagString: Untagged
@@ -41,13 +39,14 @@ GameObject:
   - component: {fileID: 33277916446597038}
   - component: {fileID: 23389767612445044}
   - component: {fileID: 65919306744485872}
+  - component: {fileID: 114279657795542596}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4726235676148548
 Transform:
   m_ObjectHideFlags: 1
@@ -69,7 +68,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1929504316162786}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.481, z: 0}
+  m_LocalPosition: {x: 0, y: 0.549, z: 0}
   m_LocalScale: {x: 0.9, y: 0.1, z: 0.9}
   m_Children: []
   m_Father: {fileID: 4726235676148548}
@@ -81,7 +80,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1929504316162786}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -90,7 +89,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: e8e483c0eb13c8143980135e1b66ca94, type: 2}
+  - {fileID: 2100000, guid: 535cde378264d6241897409333b6b630, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -159,18 +158,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1929504316162786}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &65319464369039500
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1348620115029208}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65919306744485872
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -183,16 +170,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114477881383962990
+--- !u!114 &114279657795542596
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1348620115029208}
+  m_GameObject: {fileID: 1929504316162786}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c6c3b604d3c74a1458ab1d03975fe217, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   jugador: 1
-  resaltar: {fileID: 1929504316162786}
+  state: 2
+  resaltar: {fileID: 23389767612445044}

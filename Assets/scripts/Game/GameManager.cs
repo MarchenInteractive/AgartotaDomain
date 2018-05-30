@@ -5,12 +5,15 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public GameObject casillaA;
-    public GameObject casillaB;
-    public int dimesionHorizontal = 6;
-    public int dimesionvertical = 5;
+    public GameObject cellPrefab;
+    public GameObject piecePrefab;
+    public int horizontalDimension = 6;
+    public int verticalDimension = 5;
+    public Dictionary<string, Cell> PlayerADomain;
+    public Dictionary<string, Cell> PlayerBDomain;
+    public Dictionary<string, Cell> openDomain;
 
-    public int jugador;
+    public int player;
 
     void Awake()
     {
@@ -19,69 +22,112 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(GenerarTableroLento());
+        StartCoroutine(SlowBoardGenerator());
+        // BoardGenerator();
     }
 
-    public void CambiarJugador()
+    public void Cambiarplayer()
     {
-        jugador = 1;
+        if (player == 0)
+        {
+            player = 1;
+        }
+        else if (player == 1)
+        {
+            player = 0;
+        }
+
     }
 
-    private IEnumerator GenerarTableroLento()
+    private IEnumerator SlowBoardGenerator()
     {
         GameObject temp;
         yield return new WaitForEndOfFrame();
-        for (int i = 0; i < dimesionHorizontal; i++)
+        for (int i = 0; i < horizontalDimension; i++)
         {
-
-
-            for (int j = 0; j < dimesionvertical; j++)
+            for (int j = 0; j < verticalDimension; j++)
             {
-                temp = GameObject.Instantiate(casillaA, new Vector3(i, 0f, j), Quaternion.identity);
+                temp = GameObject.Instantiate(cellPrefab, new Vector3(i, 0f, j), Quaternion.identity);
+                if (i < horizontalDimension / 2)
+                {
+                    temp.GetComponent<Cell>().player = 0;
+                }
+                else if (i >= horizontalDimension / 2)
+                {
+                    temp.GetComponent<Cell>().player = 1;
+                }
+
+                temp.GetComponent<Cell>().col = i;
+                temp.GetComponent<Cell>().row = horizontalDimension;
+                temp.name = "Cell-" + i + "-" + j;
+                // openDomain.Add(temp.name, temp.GetComponent<Cell>());
                 yield return new WaitForSeconds(0.2f);
             }
+
         }
     }
 
-    public void GenerarTablero()
+
+    public void BoardGenerator()
     {
         GameObject temp;
-        for (int i = 0; i < dimesionHorizontal; i++)
+        for (int i = 0; i < horizontalDimension; i++)
         {
-            for (int j = 0; j < dimesionvertical; j++)
+            for (int j = 0; j < verticalDimension; j++)
             {
-                temp = GameObject.Instantiate(casillaA, new Vector3(i, 0f, j), Quaternion.identity);
+                temp = GameObject.Instantiate(cellPrefab, new Vector3(i, 0f, j), Quaternion.identity);
+                if (i < horizontalDimension / 2)
+                {
+                    temp.GetComponent<Cell>().player = 0;
+                }
+                else if (i >= horizontalDimension / 2)
+                {
+                    temp.GetComponent<Cell>().player = 1;
+                }
+                temp.GetComponent<Cell>().col = i;
+                temp.GetComponent<Cell>().row = j;
+                temp.name = "Cell-" + i + "-" + j;
             }
         }
     }
 
-    public int Batalla(int atacante, int defensor)
+    public GameObject insertNewPiece(int col, int row, int player, Vector3 position)
     {
-        int suerte = Random.Range(0, 10);
+        GameObject piece = GameObject.Instantiate(piecePrefab, position, Quaternion.identity);
+        piece.GetComponent<Piece>().level = 1;
+        piece.GetComponent<Piece>().col = col;
+        piece.GetComponent<Piece>().row = row;
+        piece.name = "Piece player" + player;
+        return piece;
+    }
 
-        if (defensor < atacante)
+    public int Battle(int attacker, int defender)
+    {
+        int luck = Random.Range(0, 10);
+
+        if (defender < attacker)
         {
             return 0;
         }
-        else if (defensor > atacante)
+        else if (defender > attacker)
         {
             return 1;
         }
-        else if (defensor == atacante)
+        else if (defender == attacker)
         {
-            if (suerte <= 3)
+            if (luck <= 3)
             {
                 return 2;
             }
-            else if (suerte <= 7)
+            else if (luck <= 7)
             {
                 return 0;
             }
-            else if (suerte == 8)
+            else if (luck == 8)
             {
                 return 3;
             }
-            else if (suerte == 9)
+            else if (luck == 9)
             {
                 return 4;
             }

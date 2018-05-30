@@ -51,6 +51,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3d4138260ae5c14093b04b412d1f3ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  casilla: {fileID: 1348620115029208, guid: 80ec47a60a5fc0e4db6ccea1aff6231f, type: 2}
-  dimesionHorizontal: 6
-  dimesionvertical: 5
+  cellPrefab: {fileID: 1457987195045846, guid: bce8c418ba2aff242b5b0e25d32ae925, type: 2}
+  piecePrefab: {fileID: 1696267670448636, guid: 47322b38dc540f547933a28113973f91,
+    type: 2}
+  horizontalDimension: 6
+  verticalDimension: 5
+  player: 0
