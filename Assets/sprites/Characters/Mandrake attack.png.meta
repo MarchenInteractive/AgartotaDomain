@@ -1,21 +1,28 @@
 fileFormatVersion: 2
-guid: a45be7aed6f75e64dba19ae32ebfe690
+guid: 24b8d369cec0069418ec1e7d0af5a7b6
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Mandrake stay_0
-    21300002: Mandrake stay_1
-    21300004: Mandrake stay_2
-    21300006: Mandrake stay_3
-    21300008: Mandrake stay_4
-    21300010: Mandrake stay_5
-    21300012: Mandrake stay_6
-    21300014: Mandrake stay_7
-    21300016: Mandrake stay_8
-    21300018: Mandrake stay_9
-    21300020: Mandrake stay_10
-    21300022: Mandrake stay_11
-    21300024: Mandrake stay_12
-    21300026: Mandrake stay_13
+    21300000: Mandrake attack_0
+    21300002: Mandrake attack_1
+    21300004: Mandrake attack_2
+    21300006: Mandrake attack_3
+    21300008: Mandrake attack_4
+    21300010: Mandrake attack_5
+    21300012: Mandrake attack_6
+    21300014: Mandrake attack_7
+    21300016: Mandrake attack_8
+    21300018: Mandrake attack_9
+    21300020: Mandrake attack_10
+    21300022: Mandrake attack_11
+    21300024: Mandrake attack_12
+    21300026: Mandrake attack_13
+    21300028: Mandrake attack_14
+    21300030: Mandrake attack_15
+    21300032: Mandrake attack_16
+    21300034: Mandrake attack_17
+    21300036: Mandrake attack_18
+    21300038: Mandrake attack_19
+    21300040: Mandrake attack_20
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
@@ -96,7 +103,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mandrake stay_0
+      name: Mandrake attack_0
       rect:
         serializedVersion: 2
         x: 0
@@ -110,13 +117,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 03bbc02de523e364aab987b3cda009ed
+      spriteID: 0f8087cbb0b2ac94ea35ac2efeab32f6
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mandrake stay_1
+      name: Mandrake attack_1
       rect:
         serializedVersion: 2
         x: 64
@@ -130,13 +137,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b769bea4ae7c1c445a05a8bb8eff4e5d
+      spriteID: e289c603b24983943b06dca51c103afa
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mandrake stay_2
+      name: Mandrake attack_2
       rect:
         serializedVersion: 2
         x: 128
@@ -150,13 +157,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6dee8cc60d4b165459a1dd2a801a99b3
+      spriteID: 32564f3c581f7274db8b3615fcd19fce
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mandrake stay_3
+      name: Mandrake attack_3
       rect:
         serializedVersion: 2
         x: 192
@@ -170,13 +177,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85a8ed86dce44d54b86e7994c8a9d3e4
+      spriteID: b942f676a1d6ab140a1912052c61669b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mandrake stay_4
+      name: Mandrake attack_4
       rect:
         serializedVersion: 2
         x: 256
@@ -190,13 +197,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c28bd0db5bf2f6e48afa5cb0814bbb69
+      spriteID: a66c4dc23419933479e22bbf2159798e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mandrake stay_5
+      name: Mandrake attack_5
       rect:
         serializedVersion: 2
         x: 320
@@ -210,13 +217,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d5d7e51f68aa7b4192f3a18232b89ec
+      spriteID: 062acdd57e5d75146977d7c31702c1e2
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mandrake stay_6
+      name: Mandrake attack_6
       rect:
         serializedVersion: 2
         x: 384
@@ -230,13 +237,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6476257381b7ff44af3e7893ab5ec70
+      spriteID: 4b6ae381cc836a548b9d1fedfcc300b1
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mandrake stay_7
+      name: Mandrake attack_7
       rect:
         serializedVersion: 2
         x: 448
@@ -250,13 +257,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1835122e9efd6474c901cd84e0abad63
+      spriteID: 75102446fd08664498e1996dd0920399
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mandrake stay_8
+      name: Mandrake attack_8
       rect:
         serializedVersion: 2
         x: 512
@@ -270,13 +277,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e2036f9407878449aecb52672922c23
+      spriteID: d7e1e00e53890334280a81b377bd7244
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mandrake stay_9
+      name: Mandrake attack_9
       rect:
         serializedVersion: 2
         x: 576
@@ -290,13 +297,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c6d63cefcbefd8f46b4fbc21ce98d6b6
+      spriteID: 19712c8b77f4b7f41923cba62cb27321
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mandrake stay_10
+      name: Mandrake attack_10
       rect:
         serializedVersion: 2
         x: 640
@@ -310,13 +317,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f2dc0474b3d0c0240a620881ea564a74
+      spriteID: 6f99c4492d41eab4e866acfa2707153c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mandrake stay_11
+      name: Mandrake attack_11
       rect:
         serializedVersion: 2
         x: 704
@@ -330,13 +337,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c596c1de1275a34287fd99d38140135
+      spriteID: c535d8342104c704ebac65bdef530b93
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mandrake stay_12
+      name: Mandrake attack_12
       rect:
         serializedVersion: 2
         x: 768
@@ -350,13 +357,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 387365011c48b1a4ba421b6fa0d6d146
+      spriteID: f47bad851bcd42049bdaa54479deef04
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mandrake stay_13
+      name: Mandrake attack_13
       rect:
         serializedVersion: 2
         x: 832
@@ -370,7 +377,147 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61c5a83d642c9884295d461a927452ac
+      spriteID: 0c0170bbe3a53744e948a08ed26b1ce7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mandrake attack_14
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 355bbbe5b068cf649bed00135dd2fbcc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mandrake attack_15
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e93407011ff884c45a992e39ef222d63
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mandrake attack_16
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 575b216af372e484e9f19e665884af95
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mandrake attack_17
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e5cb8aad7f2c154ebc8bd9a6717a71d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mandrake attack_18
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 444c45ae3859a5744b357165607179f5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mandrake attack_19
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afdf1eecae859c4439ce37eb8eaa7d7f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mandrake attack_20
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88a9f57b2fbfbd644b4f75184ec203c7
       vertices: []
       indices: 
       edges: []
@@ -378,7 +525,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: a356fdd7412fa2547ac8e472ff10b224
+    spriteID: 6046fa8176747df488b630f76a32be72
     vertices: []
     indices: 
     edges: []

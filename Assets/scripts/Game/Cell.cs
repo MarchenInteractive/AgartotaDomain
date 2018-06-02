@@ -42,7 +42,7 @@ public class Cell : MonoBehaviour
 
     void OnMouseOver()
     {
-        if (GameManager.instance.player == player)
+        if (GameManager.instance != null && GameManager.instance.player == player)
         {
             render.material = highlightMaterial;
         }
