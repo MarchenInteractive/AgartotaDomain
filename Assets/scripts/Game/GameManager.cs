@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
                 temp.GetComponent<Cell>().row = horizontalDimension;
                 temp.name = "Cell-" + i + "-" + j;
                 // openDomain.Add(temp.name, temp.GetComponent<Cell>());
-                yield return new WaitForSeconds(0.2f);
+                yield return new WaitForSeconds(0.02f);
             }
 
         }

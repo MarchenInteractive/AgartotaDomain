@@ -20,7 +20,7 @@ public class Cell : MonoBehaviour
             {
                 float x = this.transform.position.x;
                 float z = this.transform.position.z - 0.4f;
-                piece = GameManager.instance.insertNewPiece(col, row, GameManager.instance.player, new Vector3(x, 0.85f, z));
+                piece = GameManager.instance.insertNewPiece(col, row, GameManager.instance.player, new Vector3(x, 0.552f, z));
 
                 if (GameManager.instance.player == 0)
                 {
