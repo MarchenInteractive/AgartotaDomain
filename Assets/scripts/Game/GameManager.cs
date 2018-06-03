@@ -60,8 +60,8 @@ public class GameManager : MonoBehaviour
                 }
 
                 temp.GetComponent<Cell>().col = i;
-                temp.GetComponent<Cell>().row = horizontalDimension;
-                temp.name = "Cell-" + i + "-" + j;
+                temp.GetComponent<Cell>().row = j;
+                temp.name = i + "-" + j;
                 // openDomain.Add(temp.name, temp.GetComponent<Cell>());
                 yield return new WaitForSeconds(0.02f);
             }
@@ -88,8 +88,8 @@ public class GameManager : MonoBehaviour
                 }
                 temp.GetComponent<Cell>().col = i;
                 temp.GetComponent<Cell>().row = j;
-                
-                temp.name = "Cell-" + i + "-" + j;
+
+                temp.name = "Cella-" + i + "-" + j;
                 temp.tag = i + "-" + j;
             }
         }
@@ -98,14 +98,14 @@ public class GameManager : MonoBehaviour
     public GameObject InsertNewPiece(int col, int row, int player, Vector3 position)
     {
         GameObject piece;
-        if (player ==0)
+        if (player == 0)
         {
-          piece =  Instantiate(prefPirate, position, Quaternion.identity) as GameObject;
+            piece = Instantiate(prefPirate, position, Quaternion.identity) as GameObject;
         }
         else
         {
-          piece = Instantiate(prefMandrake, position, Quaternion.identity) as GameObject;
-        } 
+            piece = Instantiate(prefMandrake, position, Quaternion.identity) as GameObject;
+        }
         piece.GetComponent<Piece>().level = 1;
         piece.GetComponent<Piece>().col = col;
         piece.GetComponent<Piece>().row = row;

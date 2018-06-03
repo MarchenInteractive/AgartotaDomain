@@ -13,13 +13,14 @@ public class Cell : MonoBehaviour
     public Material posibleSelectMaterial;
     public GameObject piece;
 
+
     void OnMouseDown()
     {
         if (piece == null)
         {
             if (player == GameManager.instance.player)
             {
-                float x = this.transform.position.x;
+                float x = transform.position.x;
                 float z = this.transform.position.z - 0.4f;
                 piece = GameManager.instance.InsertNewPiece(col, row, GameManager.instance.player, new Vector3(x, 0.552f, z));
 
@@ -39,7 +40,16 @@ public class Cell : MonoBehaviour
         }
         else
         {
-          
+            GameManager.instance.move = true;
+            int nextCol = col + 1;
+            int nextRow = row + 1;
+            int backCol = col - 1;
+            int backRow = row - 1;
+            GameObject.Find(nextCol + "-" + row).GetComponent<Cell>().render.material = posibleSelectMaterial;
+            GameObject.Find(col + "-" + nextRow).GetComponent<Cell>().render.material = posibleSelectMaterial;
+            GameObject.Find(backCol + "-" + row).GetComponent<Cell>().render.material = posibleSelectMaterial;
+            GameObject.Find(col + "-" + backRow).GetComponent<Cell>().render.material = posibleSelectMaterial;
+
         }
 
         Debug.Log("col:" + col + "row:" + row);
@@ -47,7 +57,7 @@ public class Cell : MonoBehaviour
 
     void OnMouseOver()
     {
-        if (GameManager.instance != null && GameManager.instance.player == player)
+        if (GameManager.instance != null && GameManager.instance.player == player && !GameManager.instance.move)
         {
             render.material = highlightMaterial;
         }
