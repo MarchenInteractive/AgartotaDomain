@@ -12,8 +12,10 @@ public class GameManager : MonoBehaviour
     public Dictionary<string, Cell> PlayerADomain;
     public Dictionary<string, Cell> PlayerBDomain;
     public Dictionary<string, Cell> openDomain;
-
+    public GameObject prefPirate;
+    public GameObject prefMandrake;
     public int player;
+    public bool move;
 
     void Awake()
     {
@@ -86,21 +88,40 @@ public class GameManager : MonoBehaviour
                 }
                 temp.GetComponent<Cell>().col = i;
                 temp.GetComponent<Cell>().row = j;
+                
                 temp.name = "Cell-" + i + "-" + j;
+                temp.tag = i + "-" + j;
             }
         }
     }
 
-    public GameObject insertNewPiece(int col, int row, int player, Vector3 position)
+    public GameObject InsertNewPiece(int col, int row, int player, Vector3 position)
     {
-        GameObject piece = GameObject.Instantiate(piecePrefab, position, Quaternion.identity);
+        GameObject piece;
+        if (player ==0)
+        {
+          piece =  Instantiate(prefPirate, position, Quaternion.identity) as GameObject;
+        }
+        else
+        {
+          piece = Instantiate(prefMandrake, position, Quaternion.identity) as GameObject;
+        } 
         piece.GetComponent<Piece>().level = 1;
         piece.GetComponent<Piece>().col = col;
         piece.GetComponent<Piece>().row = row;
         piece.name = "Piece player" + player;
+        CambioDeTurno();
         return piece;
     }
 
+    public void CambioDeTurno()
+    {
+        if (player == 0)
+            player = 1;
+        else
+            player = 0;
+
+    }
     public int Battle(int attacker, int defender)
     {
         int luck = Random.Range(0, 10);

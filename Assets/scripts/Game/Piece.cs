@@ -9,7 +9,5 @@ public class Piece : MonoBehaviour
     public int level;
     public int col;
     public int row;
-    public Sprite[] spritesPirate;
-    public Sprite[] spritesMandrake;
 
 }
