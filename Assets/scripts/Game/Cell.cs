@@ -34,7 +34,7 @@ public class Cell : MonoBehaviour
                
                 float x = transform.position.x;
                 float z = this.transform.position.z - 0.4f;
-                GameManager.instance.currentPiece.transform.position = new Vector3(x, 0.552f, z);
+                GameManager.instance.currentPiece.GetComponent<Piece>().IniciarExit(x, z);
                 foreach (var item in GameObject.FindGameObjectsWithTag("cell"))
                 {
                     if (item.GetComponent<Cell>().isSelectedPiece)

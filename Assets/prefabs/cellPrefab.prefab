@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114889578135601090}
   m_Layer: 0
   m_Name: cellPrefab
-  m_TagString: Untagged
+  m_TagString: cell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57,7 +57,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: e8e483c0eb13c8143980135e1b66ca94, type: 2}
   m_StaticBatchInfo:
@@ -115,7 +114,12 @@ MonoBehaviour:
   render: {fileID: 23923232583127472}
   defaultMaterial: {fileID: 2100000, guid: e8e483c0eb13c8143980135e1b66ca94, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 535cde378264d6241897409333b6b630, type: 2}
+  posibleSelectMaterial: {fileID: 2100000, guid: 726269400cc64ef4085245baf6f8adb8,
+    type: 2}
   piece: {fileID: 0}
+  selectable: 1
+  isSelectedPiece: 0
+  isSelectable: 0
 --- !u!114 &114889578135601090
 MonoBehaviour:
   m_ObjectHideFlags: 1
