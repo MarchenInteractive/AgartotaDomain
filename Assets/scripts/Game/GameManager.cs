@@ -16,7 +16,8 @@ public class GameManager : MonoBehaviour
     public GameObject prefMandrake;
     public int player;
     public bool move;
-
+    public GameObject currentPiece;
+    public Cell currentCell;
     void Awake()
     {
         instance = this;
@@ -30,6 +31,7 @@ public class GameManager : MonoBehaviour
 
     public void Cambiarplayer()
     {
+        Debug.Log("ne");
         if (player == 0)
         {
             player = 1;
