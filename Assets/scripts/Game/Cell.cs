@@ -12,10 +12,16 @@ public class Cell : MonoBehaviour
     public Material highlightMaterial;
     public Material posibleSelectMaterial;
     public GameObject piece;
-    public bool selectable=true;
+    public bool selectable = true;
     public bool isSelectedPiece;
     public bool isSelectable;
-
+    float x;
+    float z;
+    private void Start()
+    {
+        x = transform.position.x + 0.1f;
+        z = this.transform.position.z - 0.2f;
+    }
     void OnMouseDown()
     {
 
@@ -25,16 +31,14 @@ public class Cell : MonoBehaviour
             if (player == GameManager.instance.player && selectable)
             {
 
-                float x = transform.position.x;
-                float z = this.transform.position.z - 0.4f;
-                piece = GameManager.instance.InsertNewPiece(col, row, GameManager.instance.player, new Vector3(x, 0.552f, z));
+               
+                piece = GameManager.instance.InsertNewPiece(col, row, GameManager.instance.player, new Vector3(x, 0.552f, z),1);
+                render.material = defaultMaterial;
             }
             if (isSelectable)
-            {
-               
-                float x = transform.position.x;
-                float z = this.transform.position.z - 0.4f;
+            { 
                 GameManager.instance.currentPiece.GetComponent<Piece>().IniciarExit(x, z);
+                GameManager.instance.CambioDeTurno();
                 foreach (var item in GameObject.FindGameObjectsWithTag("cell"))
                 {
                     if (item.GetComponent<Cell>().isSelectedPiece)
@@ -44,18 +48,16 @@ public class Cell : MonoBehaviour
                     }
                 }
                 piece = GameManager.instance.currentPiece;
-                Debug.Log(GameManager.instance.currentCell);
-                GameManager.instance.currentCell.selectable=true;
-                GameManager.instance.currentCell.render.material = defaultMaterial ;
+                GameManager.instance.currentCell.render.material = defaultMaterial;
                 GameManager.instance.currentCell.PieceIsSelected(false);
                 GameManager.instance.currentPiece = null;
                 GameManager.instance.currentCell = null;
-               
-                GameManager.instance.Cambiarplayer();
-     
+
+              
+
             }
         }
-        else if(player == GameManager.instance.player)
+        else if (player == GameManager.instance.player&&!isSelectable)
         {
             if (isSelectedPiece)
             {
@@ -66,9 +68,59 @@ public class Cell : MonoBehaviour
                 PieceIsSelected(true);
             }
         }
+        else
+        {
+            if (piece.GetComponent<Piece>().level==1&&GameManager.instance.currentPiece.GetComponent<Piece>().GetComponent<Piece>().level==1)
+            {
+                //
+                GameManager.instance.currentPiece.GetComponent<Piece>().IniciarExit(x, z);
+                piece.GetComponent<Piece>().IniciarExit(x, z);
+               
+                StartCoroutine(WaitForEndOfAnimCombined(2, 0.552f));
+            }
+            if (piece.GetComponent<Piece>().level == 2 && GameManager.instance.currentPiece.GetComponent<Piece>().GetComponent<Piece>().level == 2)
+            {
+                //0.625
+                GameManager.instance.currentPiece.GetComponent<Piece>().IniciarExit(x, z);
+                piece.GetComponent<Piece>().IniciarExit(x, z);
+
+                StartCoroutine(WaitForEndOfAnimCombined(3, 0.625f));
+            }
+            if (piece.GetComponent<Piece>().level == 3 && GameManager.instance.currentPiece.GetComponent<Piece>().GetComponent<Piece>().level == 3)
+            {
+                //0.77
+                GameManager.instance.currentPiece.GetComponent<Piece>().IniciarExit(x, z);
+                piece.GetComponent<Piece>().IniciarExit(x, z);
+
+                StartCoroutine(WaitForEndOfAnimCombined(4, 0.77f));
+            }
+            Debug.Log(this.piece);
+        }
 
         Debug.Log("col:" + col + "row:" + row);
-        
+
+    }
+    IEnumerator WaitForEndOfAnimCombined(int lvl, float y)
+    {
+        yield return new WaitForSeconds(1f);
+        foreach (var item in GameObject.FindGameObjectsWithTag("cell"))
+        {
+            if (item.GetComponent<Cell>().isSelectedPiece)
+            {
+                Destroy(item.GetComponent<Cell>().piece);
+
+            }
+        }
+        Destroy(this.piece);
+        GameManager.instance.currentCell.render.material = defaultMaterial;
+        GameManager.instance.currentCell.PieceIsSelected(false);
+        GameManager.instance.currentPiece = null;
+        GameManager.instance.currentCell = null;
+        piece = GameManager.instance.InsertNewPiece(col, row, GameManager.instance.player, new Vector3(x, y, z), lvl);
+    }
+    public void setSelectable(bool valor)
+    {
+        selectable = valor;
     }
     public void PieceIsSelected(bool select)
     {
@@ -88,27 +140,28 @@ public class Cell : MonoBehaviour
         selectable = select;
         if (select)
         {
-        GameManager.instance.currentPiece = piece;
-        GameManager.instance.currentCell = this;
-        GameObject.Find(nextCol + "-" + row).GetComponent<Cell>().render.material = posibleSelectMaterial;
-        GameObject.Find(col + "-" + nextRow).GetComponent<Cell>().render.material = posibleSelectMaterial;
-        GameObject.Find(backCol + "-" + row).GetComponent<Cell>().render.material = posibleSelectMaterial;
-        GameObject.Find(col + "-" + backRow).GetComponent<Cell>().render.material = posibleSelectMaterial;
+            GameManager.instance.currentPiece = piece;
+            GameManager.instance.currentCell = this;
+            if (nextCol < GameManager.instance.horizontalDimension) GameObject.Find(nextCol + "-" + row).GetComponent<Cell>().render.material = posibleSelectMaterial;
+            if (nextRow < GameManager.instance.verticalDimension) GameObject.Find(col + "-" + nextRow).GetComponent<Cell>().render.material = posibleSelectMaterial;
+            if (backCol >= 0) GameObject.Find(backCol + "-" + row).GetComponent<Cell>().render.material = posibleSelectMaterial;
+            if (backRow >= 0) GameObject.Find(col + "-" + backRow).GetComponent<Cell>().render.material = posibleSelectMaterial;
         }
         else
         {
             GameManager.instance.currentPiece = null;
             GameManager.instance.currentCell = null;
-            GameObject.Find(nextCol + "-" + row).GetComponent<Cell>().render.material = defaultMaterial;
-            GameObject.Find(col + "-" + nextRow).GetComponent<Cell>().render.material = defaultMaterial;
-            GameObject.Find(backCol + "-" + row).GetComponent<Cell>().render.material = defaultMaterial;
-            GameObject.Find(col + "-" + backRow).GetComponent<Cell>().render.material = defaultMaterial;
+            if (nextCol < GameManager.instance.horizontalDimension) GameObject.Find(nextCol + "-" + row).GetComponent<Cell>().render.material = defaultMaterial;
+            if (nextRow < GameManager.instance.verticalDimension) GameObject.Find(col + "-" + nextRow).GetComponent<Cell>().render.material = defaultMaterial;
+            if (backCol >= 0) GameObject.Find(backCol + "-" + row).GetComponent<Cell>().render.material = defaultMaterial;
+            if (backRow >= 0) GameObject.Find(col + "-" + backRow).GetComponent<Cell>().render.material = defaultMaterial;
         }
-    
-        GameObject.Find(nextCol + "-" + row).GetComponent<Cell>().isSelectable = select;
-        GameObject.Find(col + "-" + nextRow).GetComponent<Cell>().isSelectable = select;
-        GameObject.Find(backCol + "-" + row).GetComponent<Cell>().isSelectable = select;
-        GameObject.Find(col + "-" + backRow).GetComponent<Cell>().isSelectable = select;
+        if (nextCol < GameManager.instance.horizontalDimension) GameObject.Find(nextCol + "-" + row).GetComponent<Cell>().isSelectable = select;
+        if (nextRow < GameManager.instance.verticalDimension) GameObject.Find(col + "-" + nextRow).GetComponent<Cell>().isSelectable = select;
+        if (backCol >= 0) GameObject.Find(backCol + "-" + row).GetComponent<Cell>().isSelectable = select;
+        if (backRow >= 0) GameObject.Find(col + "-" + backRow).GetComponent<Cell>().isSelectable = select;
+
+
     }
     void OnMouseOver()
     {

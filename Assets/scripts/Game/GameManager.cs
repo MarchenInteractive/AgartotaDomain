@@ -12,8 +12,8 @@ public class GameManager : MonoBehaviour
     public Dictionary<string, Cell> PlayerADomain;
     public Dictionary<string, Cell> PlayerBDomain;
     public Dictionary<string, Cell> openDomain;
-    public GameObject prefPirate;
-    public GameObject prefMandrake;
+    public GameObject[] prefPirate;
+    public GameObject[] prefMandrake;
     public int player;
     public bool move;
     public GameObject currentPiece;
@@ -29,19 +29,7 @@ public class GameManager : MonoBehaviour
         // BoardGenerator();
     }
 
-    public void Cambiarplayer()
-    {
-        Debug.Log("ne");
-        if (player == 0)
-        {
-            player = 1;
-        }
-        else if (player == 1)
-        {
-            player = 0;
-        }
 
-    }
 
     private IEnumerator SlowBoardGenerator()
     {
@@ -97,18 +85,18 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public GameObject InsertNewPiece(int col, int row, int player, Vector3 position)
+    public GameObject InsertNewPiece(int col, int row, int player, Vector3 position,int lvl)
     {
         GameObject piece;
         if (player == 0)
         {
-            piece = Instantiate(prefPirate, position, Quaternion.identity) as GameObject;
+            piece = Instantiate(prefPirate[lvl-1], position, Quaternion.identity) as GameObject;
         }
         else
         {
-            piece = Instantiate(prefMandrake, position, Quaternion.identity) as GameObject;
+            piece = Instantiate(prefMandrake[lvl-1], position, Quaternion.identity) as GameObject;
         }
-        piece.GetComponent<Piece>().level = 1;
+        piece.GetComponent<Piece>().level = lvl;
         piece.GetComponent<Piece>().col = col;
         piece.GetComponent<Piece>().row = row;
         piece.name = "Piece player" + player;
