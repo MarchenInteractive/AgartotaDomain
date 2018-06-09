@@ -15,7 +15,7 @@ public class Piece : MonoBehaviour
     {
         anima = GetComponent<Animator>();
     }
-    public void IniciarExit(float x, float z)
+    public void StartExit(float x, float z)
     {
         StartCoroutine(WaitExit(x, z));
     }
@@ -24,11 +24,11 @@ public class Piece : MonoBehaviour
     {
         anima.SetTrigger("Exit");
         yield return new WaitForSeconds(1f);
-        if (level==1||level==2)
+        if (level == 1 || level == 2)
         {
             transform.position = new Vector3(x, 0.552f, z);
         }
-        if (level ==  3)
+        if (level == 3)
         {
             transform.position = new Vector3(x, 0.625f, z);
         }
