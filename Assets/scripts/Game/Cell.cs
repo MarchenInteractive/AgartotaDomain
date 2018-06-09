@@ -12,9 +12,8 @@ public class Cell : MonoBehaviour
     public Material highlightMaterial;
     public Material posibleSelectMaterial;
     public GameObject piece;
-    public bool selectable = true;
     public bool isSelectedPiece;
-    public bool isSelectable;
+    public bool posibleMovement;
     float x;
     float z;
     private void Start()
@@ -28,15 +27,15 @@ public class Cell : MonoBehaviour
 
         if (piece == null)
         {
-            if (player == GameManager.instance.player && selectable)
+            if (player == GameManager.instance.player)
             {
 
-               
-                piece = GameManager.instance.InsertNewPiece(col, row, GameManager.instance.player, new Vector3(x, 0.552f, z),1);
+
+                piece = GameManager.instance.InsertNewPiece(col, row, GameManager.instance.player, new Vector3(x, 0.552f, z), 1);
                 render.material = defaultMaterial;
             }
-            if (isSelectable)
-            { 
+            if (posibleMovement)
+            {
                 GameManager.instance.currentPiece.GetComponent<Piece>().IniciarExit(x, z);
                 GameManager.instance.CambioDeTurno();
                 foreach (var item in GameObject.FindGameObjectsWithTag("cell"))
@@ -53,11 +52,11 @@ public class Cell : MonoBehaviour
                 GameManager.instance.currentPiece = null;
                 GameManager.instance.currentCell = null;
 
-              
+
 
             }
         }
-        else if (player == GameManager.instance.player&&!isSelectable)
+        else if (player == GameManager.instance.player && !posibleMovement)
         {
             if (isSelectedPiece)
             {
@@ -70,12 +69,12 @@ public class Cell : MonoBehaviour
         }
         else
         {
-            if (piece.GetComponent<Piece>().level==1&&GameManager.instance.currentPiece.GetComponent<Piece>().GetComponent<Piece>().level==1)
+            if (piece.GetComponent<Piece>().level == 1 && GameManager.instance.currentPiece.GetComponent<Piece>().GetComponent<Piece>().level == 1)
             {
                 //
                 GameManager.instance.currentPiece.GetComponent<Piece>().IniciarExit(x, z);
                 piece.GetComponent<Piece>().IniciarExit(x, z);
-               
+
                 StartCoroutine(WaitForEndOfAnimCombined(2, 0.552f));
             }
             if (piece.GetComponent<Piece>().level == 2 && GameManager.instance.currentPiece.GetComponent<Piece>().GetComponent<Piece>().level == 2)
@@ -108,7 +107,6 @@ public class Cell : MonoBehaviour
             if (item.GetComponent<Cell>().isSelectedPiece)
             {
                 Destroy(item.GetComponent<Cell>().piece);
-
             }
         }
         Destroy(this.piece);
@@ -118,10 +116,8 @@ public class Cell : MonoBehaviour
         GameManager.instance.currentCell = null;
         piece = GameManager.instance.InsertNewPiece(col, row, GameManager.instance.player, new Vector3(x, y, z), lvl);
     }
-    public void setSelectable(bool valor)
-    {
-        selectable = valor;
-    }
+
+
     public void PieceIsSelected(bool select)
     {
         Debug.Log(select);
@@ -131,13 +127,7 @@ public class Cell : MonoBehaviour
         int backRow = row - 1;
         GameManager.instance.move = select;
         GameObject[] cellsObj = GameObject.FindGameObjectsWithTag("cell");
-        foreach (var item in cellsObj)
-        {
-            item.GetComponent<Cell>().selectable = !select;
-        }
         isSelectedPiece = select;
-        
-        selectable = select;
         if (select)
         {
             GameManager.instance.currentPiece = piece;
@@ -156,13 +146,12 @@ public class Cell : MonoBehaviour
             if (backCol >= 0) GameObject.Find(backCol + "-" + row).GetComponent<Cell>().render.material = defaultMaterial;
             if (backRow >= 0) GameObject.Find(col + "-" + backRow).GetComponent<Cell>().render.material = defaultMaterial;
         }
-        if (nextCol < GameManager.instance.horizontalDimension) GameObject.Find(nextCol + "-" + row).GetComponent<Cell>().isSelectable = select;
-        if (nextRow < GameManager.instance.verticalDimension) GameObject.Find(col + "-" + nextRow).GetComponent<Cell>().isSelectable = select;
-        if (backCol >= 0) GameObject.Find(backCol + "-" + row).GetComponent<Cell>().isSelectable = select;
-        if (backRow >= 0) GameObject.Find(col + "-" + backRow).GetComponent<Cell>().isSelectable = select;
-
-
+        if (nextCol < GameManager.instance.horizontalDimension) GameObject.Find(nextCol + "-" + row).GetComponent<Cell>().posibleMovement = select;
+        if (nextRow < GameManager.instance.verticalDimension) GameObject.Find(col + "-" + nextRow).GetComponent<Cell>().posibleMovement = select;
+        if (backCol >= 0) GameObject.Find(backCol + "-" + row).GetComponent<Cell>().posibleMovement = select;
+        if (backRow >= 0) GameObject.Find(col + "-" + backRow).GetComponent<Cell>().posibleMovement = select;
     }
+
     void OnMouseOver()
     {
         if (GameManager.instance != null && GameManager.instance.player == player && !GameManager.instance.move)
@@ -176,7 +165,7 @@ public class Cell : MonoBehaviour
         if (!GameManager.instance.move)
         {
 
-        render.material = defaultMaterial;
+            render.material = defaultMaterial;
         }
     }
 }

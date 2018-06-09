@@ -85,20 +85,21 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public GameObject InsertNewPiece(int col, int row, int player, Vector3 position,int lvl)
+    public GameObject InsertNewPiece(int col, int row, int player, Vector3 position, int lvl)
     {
         GameObject piece;
         if (player == 0)
         {
-            piece = Instantiate(prefPirate[lvl-1], position, Quaternion.identity) as GameObject;
+            piece = Instantiate(prefPirate[lvl - 1], position, Quaternion.identity) as GameObject;
         }
         else
         {
-            piece = Instantiate(prefMandrake[lvl-1], position, Quaternion.identity) as GameObject;
+            piece = Instantiate(prefMandrake[lvl - 1], position, Quaternion.identity) as GameObject;
         }
         piece.GetComponent<Piece>().level = lvl;
         piece.GetComponent<Piece>().col = col;
         piece.GetComponent<Piece>().row = row;
+        piece.GetComponent<Piece>().owner = player;
         piece.name = "Piece player" + player;
         CambioDeTurno();
         return piece;
