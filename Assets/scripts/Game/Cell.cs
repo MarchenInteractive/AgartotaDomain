@@ -167,7 +167,6 @@ public class Cell : MonoBehaviour
         {
             if (luck <= 3)
             {
-
             }
             else if (luck <= 7)
             {
@@ -179,11 +178,7 @@ public class Cell : MonoBehaviour
             }
             else if (luck == 9)
             {
-
-            }
-            else
-            {
-
+                GameManager.instance.TurnChange();
             }
         }
     }
