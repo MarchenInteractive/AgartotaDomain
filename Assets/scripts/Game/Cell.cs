@@ -16,11 +16,13 @@ public class Cell : MonoBehaviour
     public bool posibleMovement;
     float x;
     float z;
+
     private void Start()
     {
         x = transform.position.x + 0.1f;
         z = this.transform.position.z - 0.2f;
     }
+
     void OnMouseDown()
     {
         if (piece == null)
@@ -29,61 +31,13 @@ public class Cell : MonoBehaviour
         }
         else if (piece.GetComponent<Piece>().owner == GameManager.instance.player)
         {
-            OnCellWithPiece();
+            OnCellWithOwnPiece();
         }
-
-
-    }
-    IEnumerator WaitForEndOfAnimCombined(int lvl, float y)
-    {
-        yield return new WaitForSeconds(1f);
-        foreach (var item in GameObject.FindGameObjectsWithTag("cell"))
+        else if (GameManager.instance.currentPiece != null && piece.GetComponent<Piece>().owner != GameManager.instance.player)
         {
-            if (item.GetComponent<Cell>().isSelectedPiece)
-            {
-                Destroy(item.GetComponent<Cell>().piece);
-            }
+            OnCellWithEnemyPiece();
+            Debug.Log("Attack");
         }
-        Destroy(this.piece);
-        GameManager.instance.currentCell.render.material = defaultMaterial;
-        GameManager.instance.currentCell.PieceIsSelected(false);
-        GameManager.instance.currentPiece = null;
-        GameManager.instance.currentCell = null;
-        piece = GameManager.instance.InsertNewPiece(col, row, GameManager.instance.player, new Vector3(x, y, z), lvl);
-    }
-
-    public void PieceIsSelected(bool select)
-    {
-        Debug.Log(select);
-        int nextCol = col + 1;
-        int nextRow = row + 1;
-        int backCol = col - 1;
-        int backRow = row - 1;
-        GameManager.instance.move = select;
-        GameObject[] cellsObj = GameObject.FindGameObjectsWithTag("cell");
-        isSelectedPiece = select;
-        if (select)
-        {
-            GameManager.instance.currentPiece = piece;
-            GameManager.instance.currentCell = this;
-            if (nextCol < GameManager.instance.horizontalDimension) GameObject.Find(nextCol + "-" + row).GetComponent<Cell>().render.material = posibleSelectMaterial;
-            if (nextRow < GameManager.instance.verticalDimension) GameObject.Find(col + "-" + nextRow).GetComponent<Cell>().render.material = posibleSelectMaterial;
-            if (backCol >= 0) GameObject.Find(backCol + "-" + row).GetComponent<Cell>().render.material = posibleSelectMaterial;
-            if (backRow >= 0) GameObject.Find(col + "-" + backRow).GetComponent<Cell>().render.material = posibleSelectMaterial;
-        }
-        else
-        {
-            GameManager.instance.currentPiece = null;
-            GameManager.instance.currentCell = null;
-            if (nextCol < GameManager.instance.horizontalDimension) GameObject.Find(nextCol + "-" + row).GetComponent<Cell>().render.material = defaultMaterial;
-            if (nextRow < GameManager.instance.verticalDimension) GameObject.Find(col + "-" + nextRow).GetComponent<Cell>().render.material = defaultMaterial;
-            if (backCol >= 0) GameObject.Find(backCol + "-" + row).GetComponent<Cell>().render.material = defaultMaterial;
-            if (backRow >= 0) GameObject.Find(col + "-" + backRow).GetComponent<Cell>().render.material = defaultMaterial;
-        }
-        if (nextCol < GameManager.instance.horizontalDimension) GameObject.Find(nextCol + "-" + row).GetComponent<Cell>().posibleMovement = select;
-        if (nextRow < GameManager.instance.verticalDimension) GameObject.Find(col + "-" + nextRow).GetComponent<Cell>().posibleMovement = select;
-        if (backCol >= 0) GameObject.Find(backCol + "-" + row).GetComponent<Cell>().posibleMovement = select;
-        if (backRow >= 0) GameObject.Find(col + "-" + backRow).GetComponent<Cell>().posibleMovement = select;
     }
 
     void OnMouseOver()
@@ -124,6 +78,41 @@ public class Cell : MonoBehaviour
     }
 
 
+    public void PieceIsSelected(bool select)
+    {
+        Debug.Log(select);
+        int nextCol = col + 1;
+        int nextRow = row + 1;
+        int backCol = col - 1;
+        int backRow = row - 1;
+        GameManager.instance.move = select;
+        GameObject[] cellsObj = GameObject.FindGameObjectsWithTag("cell");
+        isSelectedPiece = select;
+        if (select)
+        {
+            GameManager.instance.currentPiece = piece;
+            GameManager.instance.currentCell = this;
+            if (nextCol < GameManager.instance.horizontalDimension) GameObject.Find(nextCol + "-" + row).GetComponent<Cell>().render.material = posibleSelectMaterial;
+            if (nextRow < GameManager.instance.verticalDimension) GameObject.Find(col + "-" + nextRow).GetComponent<Cell>().render.material = posibleSelectMaterial;
+            if (backCol >= 0) GameObject.Find(backCol + "-" + row).GetComponent<Cell>().render.material = posibleSelectMaterial;
+            if (backRow >= 0) GameObject.Find(col + "-" + backRow).GetComponent<Cell>().render.material = posibleSelectMaterial;
+        }
+        else
+        {
+            GameManager.instance.currentPiece = null;
+            GameManager.instance.currentCell = null;
+            if (nextCol < GameManager.instance.horizontalDimension) GameObject.Find(nextCol + "-" + row).GetComponent<Cell>().render.material = defaultMaterial;
+            if (nextRow < GameManager.instance.verticalDimension) GameObject.Find(col + "-" + nextRow).GetComponent<Cell>().render.material = defaultMaterial;
+            if (backCol >= 0) GameObject.Find(backCol + "-" + row).GetComponent<Cell>().render.material = defaultMaterial;
+            if (backRow >= 0) GameObject.Find(col + "-" + backRow).GetComponent<Cell>().render.material = defaultMaterial;
+        }
+        if (nextCol < GameManager.instance.horizontalDimension) GameObject.Find(nextCol + "-" + row).GetComponent<Cell>().posibleMovement = select;
+        if (nextRow < GameManager.instance.verticalDimension) GameObject.Find(col + "-" + nextRow).GetComponent<Cell>().posibleMovement = select;
+        if (backCol >= 0) GameObject.Find(backCol + "-" + row).GetComponent<Cell>().posibleMovement = select;
+        if (backRow >= 0) GameObject.Find(col + "-" + backRow).GetComponent<Cell>().posibleMovement = select;
+    }
+
+
     void OnEmptyCell()
     {
         if (player == GameManager.instance.player && GameManager.instance.currentPiece == null)
@@ -134,24 +123,11 @@ public class Cell : MonoBehaviour
         }
         if (posibleMovement)
         {
-            GameManager.instance.currentPiece.GetComponent<Piece>().StartExit(x, z);
-            GameManager.instance.CambioDeTurno();
-            foreach (var item in GameObject.FindGameObjectsWithTag("cell"))
-            {
-                if (item.GetComponent<Cell>().isSelectedPiece)
-                {
-                    item.GetComponent<Cell>().piece = null;
-                }
-            }
-            piece = GameManager.instance.currentPiece;
-            GameManager.instance.currentCell.render.material = defaultMaterial;
-            GameManager.instance.currentCell.PieceIsSelected(false);
-            GameManager.instance.currentPiece = null;
-            GameManager.instance.currentCell = null;
+            GameManager.instance.currentPiece.GetComponent<Piece>().Move(x, z, this.gameObject.GetComponent<Cell>());
         }
     }
 
-    void OnCellWithPiece()
+    void OnCellWithOwnPiece()
     {
         if ((player == GameManager.instance.player || piece.GetComponent<Piece>().owner == GameManager.instance.player) && (GameManager.instance.currentPiece == null || this.gameObject.GetComponent<Cell>() == GameManager.instance.currentCell))
         {
@@ -166,33 +142,51 @@ public class Cell : MonoBehaviour
         }
         else if (posibleMovement && piece.GetComponent<Piece>().owner == GameManager.instance.player)
         {
-            Evolve();
+            GameManager.instance.currentPiece.GetComponent<Piece>().Evolve(x, z, this.gameObject.GetComponent<Cell>());
         }
     }
 
-    void Evolve()
+    void OnCellWithEnemyPiece()
     {
-        if (piece.GetComponent<Piece>().level == 1 && GameManager.instance.currentPiece.GetComponent<Piece>().GetComponent<Piece>().level == 1)
-        {
-            //
-            GameManager.instance.currentPiece.GetComponent<Piece>().StartExit(x, z);
-            piece.GetComponent<Piece>().StartExit(x, z);
+        int luck = Random.Range(0, 10);
+        GameObject attacker = GameManager.instance.currentPiece;
+        GameObject defender = piece;
+        int attackerLvl = attacker.GetComponent<Piece>().level;
+        int defenderLvl = piece.GetComponent<Piece>().level;
 
-            StartCoroutine(WaitForEndOfAnimCombined(2, 0.552f));
+        if (defenderLvl < attackerLvl)
+        {
+            Destroy(defender);
+            GameManager.instance.currentPiece.GetComponent<Piece>().Move(x, z, this.gameObject.GetComponent<Cell>());
         }
-        if (piece.GetComponent<Piece>().level == 2 && GameManager.instance.currentPiece.GetComponent<Piece>().GetComponent<Piece>().level == 2)
+        else if (defenderLvl > attackerLvl)
         {
-            GameManager.instance.currentPiece.GetComponent<Piece>().StartExit(x, z);
-            piece.GetComponent<Piece>().StartExit(x, z);
 
-            StartCoroutine(WaitForEndOfAnimCombined(3, 0.625f));
         }
-        if (piece.GetComponent<Piece>().level == 3 && GameManager.instance.currentPiece.GetComponent<Piece>().GetComponent<Piece>().level == 3)
+        else if (defenderLvl == attackerLvl)
         {
-            GameManager.instance.currentPiece.GetComponent<Piece>().StartExit(x, z);
-            piece.GetComponent<Piece>().StartExit(x, z);
+            if (luck <= 3)
+            {
 
-            StartCoroutine(WaitForEndOfAnimCombined(4, 0.77f));
+            }
+            else if (luck <= 7)
+            {
+
+            }
+            else if (luck == 8)
+            {
+
+            }
+            else if (luck == 9)
+            {
+
+            }
+            else
+            {
+
+            }
         }
     }
+
+
 }
