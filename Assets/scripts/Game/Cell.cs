@@ -23,80 +23,15 @@ public class Cell : MonoBehaviour
     }
     void OnMouseDown()
     {
-
-
         if (piece == null)
         {
-            if (player == GameManager.instance.player)
-            {
-
-
-                piece = GameManager.instance.InsertNewPiece(col, row, GameManager.instance.player, new Vector3(x, 0.552f, z), 1);
-                render.material = defaultMaterial;
-            }
-            if (posibleMovement)
-            {
-                GameManager.instance.currentPiece.GetComponent<Piece>().IniciarExit(x, z);
-                GameManager.instance.CambioDeTurno();
-                foreach (var item in GameObject.FindGameObjectsWithTag("cell"))
-                {
-                    if (item.GetComponent<Cell>().isSelectedPiece)
-                    {
-                        item.GetComponent<Cell>().piece = null;
-
-                    }
-                }
-                piece = GameManager.instance.currentPiece;
-                GameManager.instance.currentCell.render.material = defaultMaterial;
-                GameManager.instance.currentCell.PieceIsSelected(false);
-                GameManager.instance.currentPiece = null;
-                GameManager.instance.currentCell = null;
-
-
-
-            }
+            OnEmptyCell();
         }
-        else if (player == GameManager.instance.player && !posibleMovement)
+        else if (piece.GetComponent<Piece>().owner == GameManager.instance.player)
         {
-            if (isSelectedPiece)
-            {
-                PieceIsSelected(false);
-            }
-            else
-            {
-                PieceIsSelected(true);
-            }
-        }
-        else
-        {
-            if (piece.GetComponent<Piece>().level == 1 && GameManager.instance.currentPiece.GetComponent<Piece>().GetComponent<Piece>().level == 1)
-            {
-                //
-                GameManager.instance.currentPiece.GetComponent<Piece>().IniciarExit(x, z);
-                piece.GetComponent<Piece>().IniciarExit(x, z);
-
-                StartCoroutine(WaitForEndOfAnimCombined(2, 0.552f));
-            }
-            if (piece.GetComponent<Piece>().level == 2 && GameManager.instance.currentPiece.GetComponent<Piece>().GetComponent<Piece>().level == 2)
-            {
-                //0.625
-                GameManager.instance.currentPiece.GetComponent<Piece>().IniciarExit(x, z);
-                piece.GetComponent<Piece>().IniciarExit(x, z);
-
-                StartCoroutine(WaitForEndOfAnimCombined(3, 0.625f));
-            }
-            if (piece.GetComponent<Piece>().level == 3 && GameManager.instance.currentPiece.GetComponent<Piece>().GetComponent<Piece>().level == 3)
-            {
-                //0.77
-                GameManager.instance.currentPiece.GetComponent<Piece>().IniciarExit(x, z);
-                piece.GetComponent<Piece>().IniciarExit(x, z);
-
-                StartCoroutine(WaitForEndOfAnimCombined(4, 0.77f));
-            }
-            Debug.Log(this.piece);
+            OnCellWithPiece();
         }
 
-        Debug.Log("col:" + col + "row:" + row);
 
     }
     IEnumerator WaitForEndOfAnimCombined(int lvl, float y)
@@ -116,7 +51,6 @@ public class Cell : MonoBehaviour
         GameManager.instance.currentCell = null;
         piece = GameManager.instance.InsertNewPiece(col, row, GameManager.instance.player, new Vector3(x, y, z), lvl);
     }
-
 
     public void PieceIsSelected(bool select)
     {
@@ -154,18 +88,111 @@ public class Cell : MonoBehaviour
 
     void OnMouseOver()
     {
-        if (GameManager.instance != null && GameManager.instance.player == player && !GameManager.instance.move)
+        if (
+            GameManager.instance != null &&
+            !GameManager.instance.move
+            )
         {
-            render.material = highlightMaterial;
+            if (GameManager.instance.player == player)
+            {
+                if (piece != null)
+                {
+                    if (piece.GetComponent<Piece>().owner == GameManager.instance.player)
+                    {
+                        render.material = highlightMaterial;
+                    }
+                }
+                else
+                {
+                    render.material = highlightMaterial;
+                }
+            }
+            else if (piece != null && piece.GetComponent<Piece>().owner == GameManager.instance.player)
+            {
+                render.material = highlightMaterial;
+            }
+
         }
     }
 
     void OnMouseExit()
     {
-        if (!GameManager.instance.move)
+        if (!GameManager.instance.move && !posibleMovement)
+        {
+            render.material = defaultMaterial;
+        }
+    }
+
+
+    void OnEmptyCell()
+    {
+        if (player == GameManager.instance.player && GameManager.instance.currentPiece == null)
         {
 
+            piece = GameManager.instance.InsertNewPiece(col, row, GameManager.instance.player, new Vector3(x, 0.552f, z), 1);
             render.material = defaultMaterial;
+        }
+        if (posibleMovement)
+        {
+            GameManager.instance.currentPiece.GetComponent<Piece>().StartExit(x, z);
+            GameManager.instance.CambioDeTurno();
+            foreach (var item in GameObject.FindGameObjectsWithTag("cell"))
+            {
+                if (item.GetComponent<Cell>().isSelectedPiece)
+                {
+                    item.GetComponent<Cell>().piece = null;
+                }
+            }
+            piece = GameManager.instance.currentPiece;
+            GameManager.instance.currentCell.render.material = defaultMaterial;
+            GameManager.instance.currentCell.PieceIsSelected(false);
+            GameManager.instance.currentPiece = null;
+            GameManager.instance.currentCell = null;
+        }
+    }
+
+    void OnCellWithPiece()
+    {
+        if ((player == GameManager.instance.player || piece.GetComponent<Piece>().owner == GameManager.instance.player) && (GameManager.instance.currentPiece == null || this.gameObject.GetComponent<Cell>() == GameManager.instance.currentCell))
+        {
+            if (isSelectedPiece)
+            {
+                PieceIsSelected(false);
+            }
+            else
+            {
+                PieceIsSelected(true);
+            }
+        }
+        else if (posibleMovement && piece.GetComponent<Piece>().owner == GameManager.instance.player)
+        {
+            Evolve();
+        }
+    }
+
+    void Evolve()
+    {
+        if (piece.GetComponent<Piece>().level == 1 && GameManager.instance.currentPiece.GetComponent<Piece>().GetComponent<Piece>().level == 1)
+        {
+            //
+            GameManager.instance.currentPiece.GetComponent<Piece>().StartExit(x, z);
+            piece.GetComponent<Piece>().StartExit(x, z);
+
+            StartCoroutine(WaitForEndOfAnimCombined(2, 0.552f));
+        }
+        if (piece.GetComponent<Piece>().level == 2 && GameManager.instance.currentPiece.GetComponent<Piece>().GetComponent<Piece>().level == 2)
+        {
+            GameManager.instance.currentPiece.GetComponent<Piece>().StartExit(x, z);
+            piece.GetComponent<Piece>().StartExit(x, z);
+
+            StartCoroutine(WaitForEndOfAnimCombined(3, 0.625f));
+        }
+        if (piece.GetComponent<Piece>().level == 3 && GameManager.instance.currentPiece.GetComponent<Piece>().GetComponent<Piece>().level == 3)
+        {
+            GameManager.instance.currentPiece.GetComponent<Piece>().StartExit(x, z);
+            piece.GetComponent<Piece>().StartExit(x, z);
+
+            StartCoroutine(WaitForEndOfAnimCombined(4, 0.77f));
         }
     }
 }
