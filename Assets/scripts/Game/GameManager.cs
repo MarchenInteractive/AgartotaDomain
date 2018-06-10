@@ -101,57 +101,17 @@ public class GameManager : MonoBehaviour
         piece.GetComponent<Piece>().row = row;
         piece.GetComponent<Piece>().owner = player;
         piece.name = "Piece player" + player;
-        CambioDeTurno();
+        TurnChange();
         return piece;
     }
 
-    public void CambioDeTurno()
+    public void TurnChange()
     {
         if (player == 0)
             player = 1;
         else
             player = 0;
 
-    }
-    public int Battle(int attacker, int defender)
-    {
-        int luck = Random.Range(0, 10);
-
-        if (defender < attacker)
-        {
-            return 0;
-        }
-        else if (defender > attacker)
-        {
-            return 1;
-        }
-        else if (defender == attacker)
-        {
-            if (luck <= 3)
-            {
-                return 2;
-            }
-            else if (luck <= 7)
-            {
-                return 0;
-            }
-            else if (luck == 8)
-            {
-                return 3;
-            }
-            else if (luck == 9)
-            {
-                return 4;
-            }
-            else
-            {
-                return -1;
-            }
-        }
-        else
-        {
-            return -1;
-        }
     }
 
 
