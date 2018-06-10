@@ -142,7 +142,7 @@ public class Cell : MonoBehaviour
         }
         else if (posibleMovement && piece.GetComponent<Piece>().owner == GameManager.instance.player)
         {
-            GameManager.instance.currentPiece.GetComponent<Piece>().Evolve(x, z, this.gameObject.GetComponent<Cell>());
+            piece.GetComponent<Piece>().Evolve(x, z, this.gameObject.GetComponent<Cell>());
         }
     }
 
@@ -167,7 +167,6 @@ public class Cell : MonoBehaviour
         {
             if (luck <= 3)
             {
-
             }
             else if (luck <= 7)
             {
@@ -179,11 +178,7 @@ public class Cell : MonoBehaviour
             }
             else if (luck == 9)
             {
-
-            }
-            else
-            {
-
+                GameManager.instance.TurnChange();
             }
         }
     }
