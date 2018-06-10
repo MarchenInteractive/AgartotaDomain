@@ -112,10 +112,10 @@ TextureImporter:
       name: char_pirate_enter_4_0
       rect:
         serializedVersion: 2
-        x: 30
+        x: 0
         y: 960
-        width: 155
-        height: 150
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -126,10 +126,10 @@ TextureImporter:
       name: char_pirate_enter_4_1
       rect:
         serializedVersion: 2
-        x: 350
+        x: 320
         y: 960
-        width: 155
-        height: 150
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,10 +140,10 @@ TextureImporter:
       name: char_pirate_enter_4_2
       rect:
         serializedVersion: 2
-        x: 670
+        x: 640
         y: 960
-        width: 155
-        height: 150
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,10 +154,10 @@ TextureImporter:
       name: char_pirate_enter_4_3
       rect:
         serializedVersion: 2
-        x: 990
+        x: 960
         y: 960
-        width: 155
-        height: 146
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,10 +168,10 @@ TextureImporter:
       name: char_pirate_enter_4_4
       rect:
         serializedVersion: 2
-        x: 1310
+        x: 1280
         y: 960
-        width: 155
-        height: 146
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,10 +182,10 @@ TextureImporter:
       name: char_pirate_enter_4_5
       rect:
         serializedVersion: 2
-        x: 30
+        x: 0
         y: 640
-        width: 155
-        height: 146
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,10 +196,10 @@ TextureImporter:
       name: char_pirate_enter_4_6
       rect:
         serializedVersion: 2
-        x: 350
+        x: 320
         y: 640
-        width: 155
-        height: 150
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -210,10 +210,10 @@ TextureImporter:
       name: char_pirate_enter_4_7
       rect:
         serializedVersion: 2
-        x: 670
+        x: 640
         y: 640
-        width: 155
-        height: 150
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -224,10 +224,10 @@ TextureImporter:
       name: char_pirate_enter_4_8
       rect:
         serializedVersion: 2
-        x: 990
+        x: 960
         y: 640
-        width: 155
-        height: 150
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -238,10 +238,10 @@ TextureImporter:
       name: char_pirate_enter_4_9
       rect:
         serializedVersion: 2
-        x: 1310
+        x: 1280
         y: 640
-        width: 155
-        height: 145
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -252,10 +252,10 @@ TextureImporter:
       name: char_pirate_enter_4_10
       rect:
         serializedVersion: 2
-        x: 30
+        x: 0
         y: 320
-        width: 155
-        height: 145
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -266,10 +266,10 @@ TextureImporter:
       name: char_pirate_enter_4_11
       rect:
         serializedVersion: 2
-        x: 350
+        x: 320
         y: 320
-        width: 155
-        height: 145
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -280,10 +280,10 @@ TextureImporter:
       name: char_pirate_enter_4_12
       rect:
         serializedVersion: 2
-        x: 670
+        x: 640
         y: 320
-        width: 155
-        height: 150
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -294,10 +294,10 @@ TextureImporter:
       name: char_pirate_enter_4_13
       rect:
         serializedVersion: 2
-        x: 990
+        x: 960
         y: 320
-        width: 155
-        height: 150
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -308,10 +308,10 @@ TextureImporter:
       name: char_pirate_enter_4_14
       rect:
         serializedVersion: 2
-        x: 1310
+        x: 1280
         y: 320
-        width: 155
-        height: 145
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -322,10 +322,10 @@ TextureImporter:
       name: char_pirate_enter_4_15
       rect:
         serializedVersion: 2
-        x: 30
+        x: 0
         y: 0
-        width: 155
-        height: 145
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -336,10 +336,10 @@ TextureImporter:
       name: char_pirate_enter_4_16
       rect:
         serializedVersion: 2
-        x: 350
+        x: 320
         y: 0
-        width: 155
-        height: 150
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -350,10 +350,10 @@ TextureImporter:
       name: char_pirate_enter_4_17
       rect:
         serializedVersion: 2
-        x: 670
+        x: 640
         y: 0
-        width: 155
-        height: 150
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

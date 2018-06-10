@@ -1,0 +1,669 @@
+fileFormatVersion: 2
+guid: affe8b330bfde754bb153003cc036ff6
+timeCreated: 1528561847
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: char_pirate_death_0
+    21300002: char_pirate_death_1
+    21300004: char_pirate_death_2
+    21300006: char_pirate_death_3
+    21300008: char_pirate_death_4
+    21300010: char_pirate_death_5
+    21300012: char_pirate_death_6
+    21300014: char_pirate_death_7
+    21300016: char_pirate_death_8
+    21300018: char_pirate_death_9
+    21300020: char_pirate_death_10
+    21300022: char_pirate_death_11
+    21300024: char_pirate_death_12
+    21300026: char_pirate_death_13
+    21300028: char_pirate_death_14
+    21300030: char_pirate_death_15
+    21300032: char_pirate_death_16
+    21300034: char_pirate_death_17
+    21300036: char_pirate_death_18
+    21300038: char_pirate_death_19
+    21300040: char_pirate_death_20
+    21300042: char_pirate_death_21
+    21300044: char_pirate_death_22
+    21300046: char_pirate_death_23
+    21300048: char_pirate_death_24
+    21300050: char_pirate_death_25
+    21300052: char_pirate_death_26
+    21300054: char_pirate_death_27
+    21300056: char_pirate_death_28
+    21300058: char_pirate_death_29
+    21300060: char_pirate_death_30
+    21300062: char_pirate_death_31
+    21300064: char_pirate_death_32
+    21300066: char_pirate_death_33
+    21300068: char_pirate_death_34
+    21300070: char_pirate_death_35
+    21300072: char_pirate_death_36
+    21300074: char_pirate_death_37
+    21300076: char_pirate_death_38
+    21300078: char_pirate_death_39
+    21300080: char_pirate_death_40
+    21300082: char_pirate_death_41
+    21300084: char_pirate_death_42
+    21300086: char_pirate_death_43
+    21300088: char_pirate_death_44
+    21300090: char_pirate_death_45
+    21300092: char_pirate_death_46
+    21300094: char_pirate_death_47
+    21300096: char_pirate_death_48
+    21300098: char_pirate_death_49
+    21300100: char_pirate_death_50
+    21300102: char_pirate_death_51
+    21300104: char_pirate_death_52
+    21300106: char_pirate_death_53
+    21300108: char_pirate_death_54
+    21300110: char_pirate_death_55
+    21300112: char_pirate_death_56
+    21300114: char_pirate_death_57
+    21300116: char_pirate_death_58
+    21300118: char_pirate_death_59
+    21300120: char_pirate_death_60
+    21300122: char_pirate_death_61
+    21300124: char_pirate_death_62
+    21300126: char_pirate_death_63
+    21300128: char_pirate_death_64
+    21300130: char_pirate_death_65
+    21300132: char_pirate_death_66
+    21300134: char_pirate_death_67
+    21300136: char_pirate_death_68
+    21300138: char_pirate_death_69
+    21300140: char_pirate_death_70
+    21300142: char_pirate_death_71
+    21300144: char_pirate_death_72
+    21300146: char_pirate_death_73
+    21300148: char_pirate_death_74
+    21300150: char_pirate_death_75
+    21300152: char_pirate_death_76
+    21300154: char_pirate_death_77
+    21300156: char_pirate_death_78
+    21300158: char_pirate_death_79
+    21300160: char_pirate_death_80
+    21300162: char_pirate_death_81
+    21300164: char_pirate_death_82
+    21300166: char_pirate_death_83
+    21300168: char_pirate_death_84
+    21300170: char_pirate_death_85
+    21300172: char_pirate_death_86
+    21300174: char_pirate_death_87
+    21300176: char_pirate_death_88
+    21300178: char_pirate_death_89
+    21300180: char_pirate_death_90
+    21300182: char_pirate_death_91
+    21300184: char_pirate_death_92
+    21300186: char_pirate_death_93
+    21300188: char_pirate_death_94
+    21300190: char_pirate_death_95
+    21300192: char_pirate_death_96
+    21300194: char_pirate_death_97
+    21300196: char_pirate_death_98
+    21300198: char_pirate_death_99
+    21300200: char_pirate_death_100
+    21300202: char_pirate_death_101
+    21300204: char_pirate_death_102
+    21300206: char_pirate_death_103
+    21300208: char_pirate_death_104
+    21300210: char_pirate_death_105
+    21300212: char_pirate_death_106
+    21300214: char_pirate_death_107
+    21300216: char_pirate_death_108
+    21300218: char_pirate_death_109
+    21300220: char_pirate_death_110
+    21300222: char_pirate_death_111
+    21300224: char_pirate_death_112
+    21300226: char_pirate_death_113
+    21300228: char_pirate_death_114
+    21300230: char_pirate_death_115
+    21300232: char_pirate_death_116
+    21300234: char_pirate_death_117
+    21300236: char_pirate_death_118
+    21300238: char_pirate_death_119
+    21300240: char_pirate_death_120
+    21300242: char_pirate_death_121
+    21300244: char_pirate_death_122
+    21300246: char_pirate_death_123
+    21300248: char_pirate_death_124
+    21300250: char_pirate_death_125
+    21300252: char_pirate_death_126
+    21300254: char_pirate_death_127
+    21300256: char_pirate_death_128
+    21300258: char_pirate_death_129
+    21300260: char_pirate_death_130
+    21300262: char_pirate_death_131
+    21300264: char_pirate_death_132
+    21300266: char_pirate_death_133
+    21300268: char_pirate_death_134
+    21300270: char_pirate_death_135
+    21300272: char_pirate_death_136
+    21300274: char_pirate_death_137
+    21300276: char_pirate_death_138
+    21300278: char_pirate_death_139
+    21300280: char_pirate_death_140
+    21300282: char_pirate_death_141
+    21300284: char_pirate_death_142
+    21300286: char_pirate_death_143
+    21300288: char_pirate_death_144
+    21300290: char_pirate_death_145
+    21300292: char_pirate_death_146
+    21300294: char_pirate_death_147
+    21300296: char_pirate_death_148
+    21300298: char_pirate_death_149
+    21300300: char_pirate_death_150
+    21300302: char_pirate_death_151
+    21300304: char_pirate_death_152
+    21300306: char_pirate_death_153
+    21300308: char_pirate_death_154
+    21300310: char_pirate_death_155
+    21300312: char_pirate_death_156
+    21300314: char_pirate_death_157
+    21300316: char_pirate_death_158
+    21300318: char_pirate_death_159
+    21300320: char_pirate_death_160
+    21300322: char_pirate_death_161
+    21300324: char_pirate_death_162
+    21300326: char_pirate_death_163
+    21300328: char_pirate_death_164
+    21300330: char_pirate_death_165
+    21300332: char_pirate_death_166
+    21300334: char_pirate_death_167
+    21300336: char_pirate_death_168
+    21300338: char_pirate_death_169
+    21300340: char_pirate_death_170
+    21300342: char_pirate_death_171
+    21300344: char_pirate_death_172
+    21300346: char_pirate_death_173
+    21300348: char_pirate_death_174
+    21300350: char_pirate_death_175
+    21300352: char_pirate_death_176
+    21300354: char_pirate_death_177
+    21300356: char_pirate_death_178
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: char_pirate_death_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1280
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: char_pirate_death_1
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1280
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: char_pirate_death_2
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1280
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: char_pirate_death_3
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 1280
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: char_pirate_death_4
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1280
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: char_pirate_death_5
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 1280
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: char_pirate_death_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 960
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: char_pirate_death_7
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 960
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: char_pirate_death_8
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 960
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: char_pirate_death_9
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 960
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: char_pirate_death_10
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 960
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: char_pirate_death_11
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 960
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: char_pirate_death_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 640
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: char_pirate_death_13
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 640
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: char_pirate_death_14
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 640
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: char_pirate_death_15
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 640
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: char_pirate_death_16
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 640
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: char_pirate_death_17
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 640
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: char_pirate_death_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: char_pirate_death_19
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 320
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: char_pirate_death_20
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 320
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: char_pirate_death_21
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 320
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: char_pirate_death_22
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 320
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: char_pirate_death_23
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 320
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: char_pirate_death_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: char_pirate_death_25
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: char_pirate_death_26
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: char_pirate_death_27
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

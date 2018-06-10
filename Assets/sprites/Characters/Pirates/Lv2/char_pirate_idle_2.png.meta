@@ -113,10 +113,10 @@ TextureImporter:
       name: char_pirate_idle_2_0
       rect:
         serializedVersion: 2
-        x: 30
+        x: 0
         y: 960
-        width: 155
-        height: 150
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,10 +127,10 @@ TextureImporter:
       name: char_pirate_idle_2_1
       rect:
         serializedVersion: 2
-        x: 350
+        x: 320
         y: 960
-        width: 155
-        height: 150
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,10 +141,10 @@ TextureImporter:
       name: char_pirate_idle_2_2
       rect:
         serializedVersion: 2
-        x: 670
+        x: 640
         y: 960
-        width: 155
-        height: 150
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,10 +155,10 @@ TextureImporter:
       name: char_pirate_idle_2_3
       rect:
         serializedVersion: 2
-        x: 985
+        x: 960
         y: 960
-        width: 165
-        height: 145
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,10 +169,10 @@ TextureImporter:
       name: char_pirate_idle_2_4
       rect:
         serializedVersion: 2
-        x: 1305
+        x: 1280
         y: 960
-        width: 165
-        height: 145
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,10 +183,10 @@ TextureImporter:
       name: char_pirate_idle_2_5
       rect:
         serializedVersion: 2
-        x: 25
+        x: 0
         y: 640
-        width: 165
-        height: 145
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,10 +197,10 @@ TextureImporter:
       name: char_pirate_idle_2_6
       rect:
         serializedVersion: 2
-        x: 350
+        x: 320
         y: 640
-        width: 155
-        height: 150
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -211,10 +211,10 @@ TextureImporter:
       name: char_pirate_idle_2_7
       rect:
         serializedVersion: 2
-        x: 670
+        x: 640
         y: 640
-        width: 155
-        height: 150
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -225,10 +225,10 @@ TextureImporter:
       name: char_pirate_idle_2_8
       rect:
         serializedVersion: 2
-        x: 990
+        x: 960
         y: 640
-        width: 155
-        height: 150
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -239,10 +239,10 @@ TextureImporter:
       name: char_pirate_idle_2_9
       rect:
         serializedVersion: 2
-        x: 1305
+        x: 1280
         y: 640
-        width: 165
-        height: 145
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -253,10 +253,10 @@ TextureImporter:
       name: char_pirate_idle_2_10
       rect:
         serializedVersion: 2
-        x: 25
+        x: 0
         y: 320
-        width: 165
-        height: 145
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -267,10 +267,10 @@ TextureImporter:
       name: char_pirate_idle_2_11
       rect:
         serializedVersion: 2
-        x: 345
+        x: 320
         y: 320
-        width: 165
-        height: 145
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -281,10 +281,10 @@ TextureImporter:
       name: char_pirate_idle_2_12
       rect:
         serializedVersion: 2
-        x: 670
+        x: 640
         y: 320
-        width: 155
-        height: 150
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -295,10 +295,10 @@ TextureImporter:
       name: char_pirate_idle_2_13
       rect:
         serializedVersion: 2
-        x: 990
+        x: 960
         y: 320
-        width: 155
-        height: 150
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -309,10 +309,10 @@ TextureImporter:
       name: char_pirate_idle_2_14
       rect:
         serializedVersion: 2
-        x: 1310
+        x: 1280
         y: 320
-        width: 155
-        height: 150
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -323,10 +323,10 @@ TextureImporter:
       name: char_pirate_idle_2_15
       rect:
         serializedVersion: 2
-        x: 25
+        x: 0
         y: 0
-        width: 165
-        height: 145
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -337,10 +337,10 @@ TextureImporter:
       name: char_pirate_idle_2_16
       rect:
         serializedVersion: 2
-        x: 345
+        x: 320
         y: 0
-        width: 165
-        height: 145
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -351,10 +351,10 @@ TextureImporter:
       name: char_pirate_idle_2_17
       rect:
         serializedVersion: 2
-        x: 665
+        x: 640
         y: 0
-        width: 165
-        height: 145
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -365,10 +365,10 @@ TextureImporter:
       name: char_pirate_idle_2_18
       rect:
         serializedVersion: 2
-        x: 990
+        x: 960
         y: 0
-        width: 155
-        height: 150
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

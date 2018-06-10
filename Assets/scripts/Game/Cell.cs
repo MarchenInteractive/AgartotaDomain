@@ -142,7 +142,7 @@ public class Cell : MonoBehaviour
         }
         else if (posibleMovement && piece.GetComponent<Piece>().owner == GameManager.instance.player)
         {
-            GameManager.instance.currentPiece.GetComponent<Piece>().Evolve(x, z, this.gameObject.GetComponent<Cell>());
+            piece.GetComponent<Piece>().Evolve(x, z, this.gameObject.GetComponent<Cell>());
         }
     }
 

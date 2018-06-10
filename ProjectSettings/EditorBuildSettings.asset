@@ -23,4 +23,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/scenes/Game/Misions.unity
     guid: 3ade85b6d5afe2048b6800513075de75
-  m_configObjects: {}
+  - enabled: 1
+    path: Assets/scenes/Testing/Cell Testing.unity
+    guid: a192f66d96e330d49b9fb3c8acfd95db
+  - enabled: 1
+    path: Assets/scenes/Testing/Pirate Cell Testing.unity
+    guid: ab55e721dce865141b3700dacefe1d5d
