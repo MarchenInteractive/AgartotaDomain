@@ -99,7 +99,7 @@ public class Piece : MonoBehaviour
                 GameManager.instance.currentPiece.GetComponent<Piece>().StartExit(x, z);
                 this.gameObject.GetComponent<Piece>().StartExit(x, z);
 
-                StartCoroutine(WaitForEndOfAnimCombined(2, x, y, z, cell));
+                StartCoroutine(WaitForEndOfAnimCombined(this.gameObject.GetComponent<Piece>().level, x, y, z, cell));
             }
         }
     }
