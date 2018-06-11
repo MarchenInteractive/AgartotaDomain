@@ -57,8 +57,9 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: e8e483c0eb13c8143980135e1b66ca94, type: 2}
+  - {fileID: 2100000, guid: e12e616a16314054482e0e16df8ce02d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -112,14 +113,14 @@ MonoBehaviour:
   col: 0
   row: 0
   render: {fileID: 23923232583127472}
-  defaultMaterial: {fileID: 2100000, guid: e8e483c0eb13c8143980135e1b66ca94, type: 2}
+  dayMaterial: {fileID: 2100000, guid: e8e483c0eb13c8143980135e1b66ca94, type: 2}
+  nightMaterial: {fileID: 2100000, guid: e12e616a16314054482e0e16df8ce02d, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 535cde378264d6241897409333b6b630, type: 2}
   posibleSelectMaterial: {fileID: 2100000, guid: 726269400cc64ef4085245baf6f8adb8,
     type: 2}
   piece: {fileID: 0}
-  selectable: 1
   isSelectedPiece: 0
-  isSelectable: 0
+  posibleMovement: 0
 --- !u!114 &114889578135601090
 MonoBehaviour:
   m_ObjectHideFlags: 1

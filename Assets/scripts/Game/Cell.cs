@@ -8,7 +8,8 @@ public class Cell : MonoBehaviour
     public int col;
     public int row;
     public Renderer render;
-    public Material defaultMaterial;
+    public Material dayMaterial;
+    public Material nightMaterial;
     public Material highlightMaterial;
     public Material posibleSelectMaterial;
     public GameObject piece;
@@ -73,7 +74,7 @@ public class Cell : MonoBehaviour
     {
         if (!GameManager.instance.move && !posibleMovement)
         {
-            render.material = defaultMaterial;
+            GameManager.instance.CleanBoard();
         }
     }
 
@@ -101,10 +102,10 @@ public class Cell : MonoBehaviour
         {
             GameManager.instance.currentPiece = null;
             GameManager.instance.currentCell = null;
-            if (nextCol < GameManager.instance.horizontalDimension) GameObject.Find(nextCol + "-" + row).GetComponent<Cell>().render.material = defaultMaterial;
-            if (nextRow < GameManager.instance.verticalDimension) GameObject.Find(col + "-" + nextRow).GetComponent<Cell>().render.material = defaultMaterial;
-            if (backCol >= 0) GameObject.Find(backCol + "-" + row).GetComponent<Cell>().render.material = defaultMaterial;
-            if (backRow >= 0) GameObject.Find(col + "-" + backRow).GetComponent<Cell>().render.material = defaultMaterial;
+            if (nextCol < GameManager.instance.horizontalDimension) GameObject.Find(nextCol + "-" + row).GetComponent<Cell>().render.material = nightMaterial;
+            if (nextRow < GameManager.instance.verticalDimension) GameObject.Find(col + "-" + nextRow).GetComponent<Cell>().render.material = nightMaterial;
+            if (backCol >= 0) GameObject.Find(backCol + "-" + row).GetComponent<Cell>().render.material = nightMaterial;
+            if (backRow >= 0) GameObject.Find(col + "-" + backRow).GetComponent<Cell>().render.material = nightMaterial;
         }
         if (nextCol < GameManager.instance.horizontalDimension) GameObject.Find(nextCol + "-" + row).GetComponent<Cell>().posibleMovement = select;
         if (nextRow < GameManager.instance.verticalDimension) GameObject.Find(col + "-" + nextRow).GetComponent<Cell>().posibleMovement = select;
@@ -119,7 +120,6 @@ public class Cell : MonoBehaviour
         {
 
             piece = GameManager.instance.InsertNewPiece(col, row, GameManager.instance.player, new Vector3(x, 0.552f, z), 1);
-            render.material = defaultMaterial;
         }
         if (posibleMovement)
         {
@@ -158,28 +158,50 @@ public class Cell : MonoBehaviour
         {
             Destroy(defender);
             GameManager.instance.currentPiece.GetComponent<Piece>().Move(x, z, this.gameObject.GetComponent<Cell>());
+            GameManager.instance.currentCell.GetComponent<Cell>().isSelectedPiece = false;
+            GameManager.instance.currentCell.GetComponent<Cell>().piece = null;
+            piece = null;
         }
         else if (defenderLvl > attackerLvl)
         {
-
+            Debug.Log("Nope");
         }
         else if (defenderLvl == attackerLvl)
         {
             if (luck <= 3)
             {
+                Destroy(defender);
+                GameManager.instance.currentPiece.GetComponent<Piece>().Move(x, z, this.gameObject.GetComponent<Cell>());
             }
             else if (luck <= 7)
             {
-
+                GameManager.instance.currentCell.GetComponent<Cell>().isSelectedPiece = false;
+                GameManager.instance.currentCell.GetComponent<Cell>().piece = null;
+                Destroy(attacker);
+                GameManager.instance.TurnChange();
             }
             else if (luck == 8)
             {
-
+                Destroy(defender);
+                Destroy(attacker);
+                GameManager.instance.currentCell.GetComponent<Cell>().isSelectedPiece = false;
+                GameManager.instance.currentCell.GetComponent<Cell>().piece = null;
+                piece = null;
+                GameManager.instance.TurnChange();
             }
             else if (luck == 9)
             {
+                Debug.Log("Nothing");
                 GameManager.instance.TurnChange();
             }
+        }
+        GameManager.instance.currentCell = null;
+        GameManager.instance.currentPiece = null;
+
+        foreach (var item in GameObject.FindGameObjectsWithTag("cell"))
+        {
+            // item.GetComponent<Cell>().render.material = nightMaterial;
+            item.GetComponent<Cell>().posibleMovement = false;
         }
     }
 

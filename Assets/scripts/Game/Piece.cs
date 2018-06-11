@@ -9,11 +9,14 @@ public class Piece : MonoBehaviour
     public int level;
     public int col;
     public int row;
+
+    private int maxLevel;
     Animator anima;
 
     private void Start()
     {
         anima = GetComponent<Animator>();
+        maxLevel = 3;
     }
     public void StartExit(float x, float z)
     {
@@ -49,7 +52,7 @@ public class Piece : MonoBehaviour
             }
         }
         Destroy(cell.piece);
-        // GameManager.instance.currentCell.render.material = defaultMaterial;
+        // GameManager.instance.currentCell.render.material = nightMaterial;
         GameManager.instance.currentCell.PieceIsSelected(false);
         GameManager.instance.currentPiece = null;
         GameManager.instance.currentCell = null;
@@ -68,7 +71,7 @@ public class Piece : MonoBehaviour
             }
         }
         cell.piece = GameManager.instance.currentPiece;
-        GameManager.instance.currentCell.render.material = cell.defaultMaterial;
+        GameManager.instance.currentCell.render.material = cell.nightMaterial;
         GameManager.instance.currentCell.PieceIsSelected(false);
         GameManager.instance.currentPiece = null;
         GameManager.instance.currentCell = null;
@@ -81,7 +84,10 @@ public class Piece : MonoBehaviour
             GameManager.instance.currentPiece.GetComponent<Piece>().GetComponent<Piece>().owner == GameManager.instance.player
             )
         {
-            if (this.gameObject.GetComponent<Piece>().level == GameManager.instance.currentPiece.GetComponent<Piece>().GetComponent<Piece>().level)
+            if (
+                this.gameObject.GetComponent<Piece>().level == GameManager.instance.currentPiece.GetComponent<Piece>().GetComponent<Piece>().level &&
+                this.gameObject.GetComponent<Piece>().level <= maxLevel
+                )
             {
                 float y = 0.552f;
                 if (this.gameObject.GetComponent<Piece>().level == 1)

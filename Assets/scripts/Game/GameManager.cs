@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
                 temp.GetComponent<Cell>().col = i;
                 temp.GetComponent<Cell>().row = j;
 
-                temp.name = "Cella-" + i + "-" + j;
+                temp.name = "Cell-" + i + "-" + j;
                 temp.tag = i + "-" + j;
             }
         }
@@ -111,6 +111,26 @@ public class GameManager : MonoBehaviour
             player = 1;
         else
             player = 0;
+
+
+    }
+
+    public void CleanBoard()
+    {
+        foreach (var item in GameObject.FindGameObjectsWithTag("cell"))
+        {
+            Cell cell = item.GetComponent<Cell>();
+            if (player == 0)
+            {
+                cell.render.material = cell.nightMaterial;
+
+            }
+            else if (player == 1)
+            {
+                cell.render.material = cell.dayMaterial;
+
+            }
+        }
 
     }
 
