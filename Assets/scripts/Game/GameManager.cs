@@ -42,11 +42,11 @@ public class GameManager : MonoBehaviour
                 temp = GameObject.Instantiate(cellPrefab, new Vector3(i, 0f, j), Quaternion.identity);
                 if (i < horizontalDimension / 2)
                 {
-                    temp.GetComponent<Cell>().player = 0;
+                    temp.GetComponent<Cell>().player = 1;
                 }
                 else if (i >= horizontalDimension / 2)
                 {
-                    temp.GetComponent<Cell>().player = 1;
+                    temp.GetComponent<Cell>().player = 0;
                 }
 
                 temp.GetComponent<Cell>().col = i;
