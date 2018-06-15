@@ -9,11 +9,14 @@ public class Piece : MonoBehaviour
     public int level;
     public int col;
     public int row;
+
+    private int maxLevel;
     Animator anima;
 
     private void Start()
     {
         anima = GetComponent<Animator>();
+        maxLevel = 3;
     }
     public void StartExit(float x, float z)
     {
@@ -49,7 +52,7 @@ public class Piece : MonoBehaviour
             }
         }
         Destroy(cell.piece);
-        // GameManager.instance.currentCell.render.material = defaultMaterial;
+        // GameManager.instance.currentCell.render.material = nightMaterial;
         GameManager.instance.currentCell.PieceIsSelected(false);
         GameManager.instance.currentPiece = null;
         GameManager.instance.currentCell = null;
@@ -68,7 +71,7 @@ public class Piece : MonoBehaviour
             }
         }
         cell.piece = GameManager.instance.currentPiece;
-        GameManager.instance.currentCell.render.material = cell.defaultMaterial;
+        GameManager.instance.currentCell.render.material = cell.nightMaterial;
         GameManager.instance.currentCell.PieceIsSelected(false);
         GameManager.instance.currentPiece = null;
         GameManager.instance.currentCell = null;
@@ -76,27 +79,34 @@ public class Piece : MonoBehaviour
 
     public void Evolve(float x, float z, Cell cell)
     {
-        if (this.gameObject.GetComponent<Piece>().level == 1 && GameManager.instance.currentPiece.GetComponent<Piece>().GetComponent<Piece>().level == 1)
+        if (
+            this.gameObject.GetComponent<Piece>().owner == GameManager.instance.player &&
+            GameManager.instance.currentPiece.GetComponent<Piece>().GetComponent<Piece>().owner == GameManager.instance.player
+            )
         {
-            //
-            GameManager.instance.currentPiece.GetComponent<Piece>().StartExit(x, z);
-            this.gameObject.GetComponent<Piece>().StartExit(x, z);
+            if (
+                this.gameObject.GetComponent<Piece>().level == GameManager.instance.currentPiece.GetComponent<Piece>().GetComponent<Piece>().level &&
+                this.gameObject.GetComponent<Piece>().level <= maxLevel
+                )
+            {
+                float y = 0.552f;
+                if (this.gameObject.GetComponent<Piece>().level == 1)
+                {
+                    y = 0.552f;
+                }
+                else if (this.gameObject.GetComponent<Piece>().level == 2)
+                {
+                    y = 0.625f;
+                }
+                else if (this.gameObject.GetComponent<Piece>().level == 3)
+                {
+                    y = 0.77f;
+                }
+                GameManager.instance.currentPiece.GetComponent<Piece>().StartExit(x, z);
+                this.gameObject.GetComponent<Piece>().StartExit(x, z);
 
-            StartCoroutine(WaitForEndOfAnimCombined(2, x, 0.552f, z, cell));
-        }
-        if (this.gameObject.GetComponent<Piece>().level == 2 && GameManager.instance.currentPiece.GetComponent<Piece>().GetComponent<Piece>().level == 2)
-        {
-            GameManager.instance.currentPiece.GetComponent<Piece>().StartExit(x, z);
-            this.gameObject.GetComponent<Piece>().StartExit(x, z);
-
-            StartCoroutine(WaitForEndOfAnimCombined(3, x, 0.625f, z, cell));
-        }
-        if (this.gameObject.GetComponent<Piece>().level == 3 && GameManager.instance.currentPiece.GetComponent<Piece>().GetComponent<Piece>().level == 3)
-        {
-            GameManager.instance.currentPiece.GetComponent<Piece>().StartExit(x, z);
-            this.gameObject.GetComponent<Piece>().StartExit(x, z);
-
-            StartCoroutine(WaitForEndOfAnimCombined(4, x, 0.77f, z, cell));
+                StartCoroutine(WaitForEndOfAnimCombined(this.gameObject.GetComponent<Piece>().level + 1, x, y, z, cell));
+            }
         }
     }
 
